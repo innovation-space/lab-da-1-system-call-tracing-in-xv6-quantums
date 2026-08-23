@@ -210,6 +210,8 @@ fork(void)
 
   safestrcpy(np->name, curproc->name, sizeof(curproc->name));
 
+  np->trace_on = curproc->trace_on;
+
   pid = np->pid;
 
   acquire(&ptable.lock);
